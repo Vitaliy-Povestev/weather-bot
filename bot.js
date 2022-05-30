@@ -198,3 +198,5 @@ bot.onText(/\/time(.+)/, ({ chat }, match) => {
     );
   } else bot.sendMessage(chat.id, "Введи правильное время, дурашка");
 });
+
+module.exports = bot;
