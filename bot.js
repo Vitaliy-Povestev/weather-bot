@@ -1,10 +1,21 @@
 const axios = require("axios");
 const nodeCron = require("node-cron");
-
 const TelegramBot = require("node-telegram-bot-api");
-const bot = new TelegramBot("5294521584:AAF1fD0myOQ8-kb_fhgcaFaDUsWuLsBo8-w", {
-  polling: true,
-});
+require("dotenv").config();
+
+var bot;
+token = process.env.TELEGRAM_TOKEN;
+if (process.env.NODE_ENV === "production") {
+  bot = new TelegramBot(token);
+  bot.setWebHook(process.env.HEROKU_URL + bot.token);
+  console.log("**** BOT initiated ***** ");
+} else {
+  // otherwise, we use polling
+  // differences between webhooks and polling:
+  // https://core.telegram.org/bots/webhooks
+  // https://stackoverflow.com/questions/40033150/telegram-bot-getupdates-vs-setwebhook
+  bot = new TelegramBot(token, { polling: true });
+}
 
 bot.setMyCommands([
   {

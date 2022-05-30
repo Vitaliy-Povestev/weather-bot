@@ -1,6 +1,8 @@
 const express = require("express");
 require("dotenv").config();
 
+console.log(process.env);
+
 const bot = require("./bot");
 
 const app = express();
