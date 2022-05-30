@@ -1,0 +1,19 @@
+{
+  "name": "penis",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "test": "nodemon bot.js",
+    "cum": "nodemon bot.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "mysql2": "^2.3.3",
+    "node-telegram-bot-api": "^0.57.0",
+    "nodemon": "^2.0.16"
+  },
+  "keywords": [],
+  "description": ""
+}
